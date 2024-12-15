@@ -1,0 +1,48 @@
+/*Create Data Base*/
+Create DataBase Gym
+use Gym
+/*User*/
+Create Table User_Gym
+(
+id int identity(1,1) primary key,
+NameUser varchar(max),
+TypeUSer varchar(50),
+Email varchar(max),
+password varchar(50),
+phone varchar(11),
+);
+/*Insert User*/
+insert into User_Gym(NameUser,TypeUSer,Email,password,phone)
+VALUES 
+('Mohamed','Admin','Mohamed@gmail.com','670b14728ad9902aecba32e22fa4f6bd','0000000000'),
+('Zidan','Admin','Zidan@gmail.com','670b14728ad9902aecba32e22fa4f6bd','0000000000'),
+('Hesham','Admin','Hesham@gmail.com','670b14728ad9902aecba32e22fa4f6bd','0000000000')
+,('Ahmad','Admin','Ahmad@gmail.com','670b14728ad9902aecba32e22fa4f6bd','0000000000'),
+('youssef','Admin','youssef@gmail.com','670b14728ad9902aecba32e22fa4f6bd','0000000000')
+/*User_Client*/
+Create Table User_Client
+(
+id int identity(1,1) primary key,
+Iduser int,
+DateOFRegister date
+
+Constraint DatpayUser foreign key(Iduser) references User_Gym(id)
+)
+
+/*Traing*/
+Create Table training
+(
+id int identity(1,1) primary key,
+DayTraining int,
+Typetraining varchar(350)
+)
+/*Insert training*/
+INSERT INTO training 
+VALUES (1, 'Bench + leg'),(2, 'Back + arm'),(3, 'shoulder + bench'),(4, 'comfort')
+,(5, 'Bar bench press + dumbbells + push-ups'),(6, 'Bar bench press + push-up + dumbbell lightening bench'),(7, 'Squat bar + stabbing a man'),(8, 'Front man + sissy squat')
+,(9, 'Wide grip bar + back dumbbell'),(10, 'Back bar + back shoulder exercises'),(11, 'Side shoulder flap + pull-up bar inverted back'),(12, 'Back shoulder exercises + front shoulder flap with the bar')
+,(13, 'comfort'),(14, 'Front cable flap + bar tray'),(15, 'Bench + leg'),(16, 'Back + arm'),
+(17, 'shoulder + bench'),(18, 'Bar bench press + dumbbells + push-ups'),(19, 'Wide grip bar + back dumbbell'),(20, 'shoulder + bench')
+,(21, 'comfort'),(22, 'Side shoulder flap + pull-up bar inverted back'),(23, 'Front cable flap + bar tray'),(24, 'Back + arm')
+,(25, 'Bench + leg'),(26, 'Bar bench press + push-up + dumbbell lightening bench'),(27, 'Wide grip bar + back dumbbell'),(28, 'Squat bar + stabbing a man')
+,(29, 'comfort'),(30, 'Back bar + back shoulder exercises'),(31, 'Front cable flap + bar tray')
